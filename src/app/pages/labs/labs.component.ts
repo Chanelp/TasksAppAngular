@@ -16,4 +16,6 @@ export class LabsComponent {
     "Help with homeworks",
     "Programming"
   ];
+
+  nombre = "Lisa Simpsom"
 }
