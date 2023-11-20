@@ -10,12 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class LabsComponent {
   title = 'universo';
-  tasks = [
+  tasks = signal([
     "Learn English",
     "Read a book",
     "Help with homeworks",
     "Programming"
-  ];
+  ]);
 
   valueInput = ''
 
