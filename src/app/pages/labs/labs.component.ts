@@ -17,5 +17,29 @@ export class LabsComponent {
     "Programming"
   ];
 
+  valueInput = ''
+
   nombre = "Lisa Simpsom"
+  pais = "Jamaica"
+  habilitado = true
+  urlImg = "https://www.travel-xperience.com/sites/default/files/portada_destino_0.jpeg"
+
+  person = {
+    name:'Juanpa',
+    age: 18,
+    avatar: 'https://www.travel-xperience.com/sites/default/files/portada_destino_0.jpeg'
+  }
+
+  clickHandler(){
+    alert("CUIDAO")
+  }
+
+  changeHandler(event: Event){
+    console.log(event);
+  }
+
+  changeTextInput(event: Event){
+    const elementInput = event.target as HTMLInputElement;
+    this.valueInput = elementInput.value;
+  }
 }

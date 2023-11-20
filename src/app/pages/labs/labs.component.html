@@ -1,10 +1,26 @@
-<h1>Buenas noches {{ title }}!</h1>
-<ul>
-  <li *ngFor="let task of tasks">
-    {{ task }}
-  </li>
-</ul>
-<hr />
-<h2> {{ 'hola'.repeat(4) }} </h2>
-<p>La suma de 4 + 4 es {{ 4 + 4 }} </p>
-<b>Su nombre es {{ nombre }} </b>
+<div class="container">
+  <h1>Buenas noches {{ title }}!</h1>
+  <ul>
+    <li *ngFor="let task of tasks">
+      {{ task }}
+    </li>
+  </ul>
+  <hr />
+  <h2> {{ 'hola'.repeat(4) }} </h2>
+  <p>La suma de 4 + 4 es {{ 4 + 4 }} </p>
+  <b>Su nombre es {{ person.name }} </b>
+  <input type="number" [value]="person.age">
+  <hr>
+  <button [disabled]="habilitado">Click me!</button>
+  <hr>
+  <button (click)="clickHandler()">Ve una alerta</button>
+  <hr>
+  <button (dblclick)="clickHandler()">Ve una alerta con dblclick</button>
+  <img [src]="person.avatar" alt="Holanda">
+  <hr>
+  <p>(change)</p>
+  <input type="text" (change)="changeHandler($event)">
+  <hr>
+  <input type="text" (change)="changeTextInput($event)">
+  <p>I am the input content {{ valueInput }} </p>
+</div>
