@@ -19,8 +19,12 @@
   <img [src]="person.avatar" alt="Holanda">
   <hr>
   <p>(change)</p>
-  <input type="text" (change)="changeHandler($event)">
+  <input type="number" [value]="person.age" (change)="changeHandler($event)">
   <hr>
   <input type="text" (change)="changeTextInput($event)">
   <p>I am the input content {{ valueInput }} </p>
+  <hr>
+  <p>Now with keydown</p>
+  <h4> {{ valueInput }} </h4>
+  <input type="text" (keyup)="keyupHandler($event)">
 </div>

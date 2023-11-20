@@ -42,4 +42,10 @@ export class LabsComponent {
     const elementInput = event.target as HTMLInputElement;
     this.valueInput = elementInput.value;
   }
+
+  keyupHandler(event: KeyboardEvent){
+    const elementInput = event.target as HTMLInputElement;
+    this.valueInput = elementInput.value;
+    console.log(this.valueInput);
+  }
 }
