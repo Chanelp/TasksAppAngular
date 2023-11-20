@@ -27,4 +27,7 @@
   <p>Now with keydown</p>
   <h4> {{ valueInput }} </h4>
   <input type="text" (keyup)="keyupHandler($event)">
+  <hr>
+  <h2> {{ numberResult() }} </h2>
+  <button (click)="increase()">Increase your number</button>
 </div>

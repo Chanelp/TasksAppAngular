@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -30,6 +30,9 @@ export class LabsComponent {
     avatar: 'https://www.travel-xperience.com/sites/default/files/portada_destino_0.jpeg'
   }
 
+  name = signal("Daniel")
+  numberResult = signal(0)
+
   clickHandler(){
     alert("CUIDAO")
   }
@@ -48,4 +51,9 @@ export class LabsComponent {
     this.valueInput = elementInput.value;
     console.log(this.valueInput);
   }
+
+  increase(){
+    this.numberResult.update((value) => value + 1);
+  }
+
 }
