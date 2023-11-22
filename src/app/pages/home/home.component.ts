@@ -44,4 +44,9 @@ export class HomeComponent {
     this.tasks.update((tasks) => tasks.filter((task, position) => position !== index));
   }
 
+  changeState(task:Task){
+    task.completed = !task.completed
+    console.log(`EL ESTADO ES: ${task.completed}`);
+  }
+
 }
