@@ -58,8 +58,24 @@ export class LabsComponent {
 
   changeAge(event: Event){
     const input = event.target as HTMLInputElement;
-    const newAge = input.value
-    this.person().age = +newAge
+    const newAge = input.value;
+    this.person.update(prevalue => {
+      return {
+        ...prevalue,
+        age: +newAge
+      }
+    });
+  }
+
+  changeName(event: Event){
+    const input = event.target as HTMLInputElement;
+    const newName = input.value;
+    this.person.update(prevalue => {
+      return {
+        ...prevalue,
+        name: newName
+      }
+    });
   }
 
 }
