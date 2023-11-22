@@ -37,4 +37,10 @@
   <ng-template #soyMenor>
     Sigo siendo Chanel pero soy menor de 18
   </ng-template>
+  <hr>
+  <div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'Nicolas'">El es Nico</p>
+    <p *ngSwitchCase="'Oscar'">El es Oscar</p>
+    <p *ngSwitchCase="'Andres'">El es Andres</p>
+  </div>
 </div>
