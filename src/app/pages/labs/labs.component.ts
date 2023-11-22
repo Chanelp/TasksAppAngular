@@ -24,11 +24,11 @@ export class LabsComponent {
   habilitado = true
   urlImg = "https://www.travel-xperience.com/sites/default/files/portada_destino_0.jpeg"
 
-  person = {
+  person = signal({
     name:'Juanpa',
     age: 18,
     avatar: 'https://www.travel-xperience.com/sites/default/files/portada_destino_0.jpeg'
-  }
+  })
 
   name = signal("Daniel")
   numberResult = signal(0)
@@ -54,6 +54,12 @@ export class LabsComponent {
 
   increase(){
     this.numberResult.update((value) => value + 1);
+  }
+
+  changeAge(event: Event){
+    const input = event.target as HTMLInputElement;
+    const newAge = input.value
+    this.person().age = +newAge
   }
 
 }

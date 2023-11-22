@@ -10,17 +10,17 @@
   <h2> {{ 'hola'.repeat(4) }} </h2>
   <p>La suma de 4 + 4 es {{ 4 + 4 }} </p>
   <b>Su nombre es {{ person.name }} </b>
-  <input type="number" [value]="person.age">
+  <input type="number" [value]="person().age">
   <hr>
   <button [disabled]="habilitado">Click me!</button>
   <hr>
   <button (click)="clickHandler()">Ve una alerta</button>
   <hr>
   <button (dblclick)="clickHandler()">Ve una alerta con dblclick</button>
-  <img [src]="person.avatar" alt="Holanda">
+  <img [src]="person().avatar" alt="Holanda">
   <hr>
   <p>(change)</p>
-  <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  <input type="number" [value]="person().age" (change)="changeHandler($event)">
   <hr>
   <input type="text" (change)="changeTextInput($event)">
   <p>I am the input content {{ valueInput }} </p>
@@ -31,4 +31,10 @@
   <hr>
   <h2> {{ numberResult() }} </h2>
   <button (click)="increase()">Increase your number</button>
+  <hr>
+  <input type="number" [value]="person().age" (change)="changeAge($event)">
+  <p *ngIf="person().age > 18; else soyMenor">Soy Chanel y soy mayor de 18</p>
+  <ng-template #soyMenor>
+    Sigo siendo Chanel pero soy menor de 18
+  </ng-template>
 </div>
