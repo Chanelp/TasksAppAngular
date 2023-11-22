@@ -6,8 +6,9 @@
             <input 
             class="new-todo" 
             placeholder="Type new todo" 
-            autofocus type="text" 
-            (change)="changeHandler($event)" />
+            autofocus type="text"
+            [formControl]="newTaskCtrl" 
+            (keydown.enter)="changeHandler()" />
         </div>
     </header>
     <div class="container todoapp-wrapper">
