@@ -27,15 +27,23 @@ export class HomeComponent {
   newTaskCtrl = new FormControl('', {
     nonNullable: true,
     validators: [
-      Validators.required
+      Validators.required,
+      Validators.pattern('^\\S.*$'),
+      Validators.minLength(3)
     ]
   });
 
   changeHandler(){
     if(this.newTaskCtrl.valid){
-      const newTask = this.newTaskCtrl.value;
-      this.newTaskCtrl.setValue('');
-      this.addTask(newTask);
+      const value = this.newTaskCtrl.value;
+
+      this.tasks.update((previous) => [
+        ...previous,
+        { id: Date.now(), title: value.trim(), completed: false },
+      ]);
+
+      // this.newTaskCtrl.setValue('');
+      // this.addTask(newTask);
     }
   }
 
