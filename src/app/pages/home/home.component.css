@@ -141,6 +141,10 @@
     list-style: none;
 }
 
+.todo-list.completed{
+    text-decoration: line-through;
+}
+
 .todo-list li {
     position: relative;
     font-size: 24px;
