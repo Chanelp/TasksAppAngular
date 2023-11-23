@@ -6,3 +6,14 @@
     height: 100px;
     background-color: blueviolet;
 }
+
+.message-error{
+    background-color: red;
+    color: white;
+    opacity: 0;
+    transition: all linear .4s;
+}
+
+.message-error.show{
+    opacity: 1;
+}
