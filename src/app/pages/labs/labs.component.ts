@@ -35,6 +35,7 @@ export class LabsComponent {
   numberResult = signal(0)
 
   colorCtrl = new FormControl();
+  widthCtrl = new FormControl();
 
   constructor(){
     this.colorCtrl.valueChanges.subscribe(value => {

@@ -45,7 +45,15 @@
     <p *ngSwitchCase="'Andres'">El es Andres</p>
     <p *ngSwitchDefault>No hay persona</p>
   </div>
-</div>
-<hr>
-<input type="color" [formControl]="colorCtrl">
+  <hr>
+  <input type="color" [formControl]="colorCtrl">
 <p>Color {{ colorCtrl.value }} </p>
+<svg>
+  <g>
+    <rect x="0" y="0" width="100" height="100" [attr.fill]="colorCtrl.value" />
+  </g>
+</svg>
+<hr>
+<input type="number" [formControl]="widthCtrl">
+<div class="box" [style.width.px]="widthCtrl.value"></div>
+</div>
