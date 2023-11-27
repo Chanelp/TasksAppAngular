@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit{
         { id: Date.now(), title: value.trim(), completed: false },
       ]);
 
-      // this.newTaskCtrl.setValue('');
+      this.newTaskCtrl.setValue('');
       // this.addTask(newTask);
     }
   }
