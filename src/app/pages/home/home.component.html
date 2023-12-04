@@ -3,12 +3,8 @@
         <div class="container">
             <h1>Mi gestor de tareas</h1>
             <p>Todas mis tareas en un lugar</p>
-            <input 
-            class="new-todo" 
-            placeholder="Type new todo" 
-            autofocus type="text"
-            [formControl]="newTaskCtrl" 
-            (keydown.enter)="changeHandler()" />
+            <input class="new-todo" placeholder="Type new todo" autofocus type="text" [formControl]="newTaskCtrl"
+                (keydown.enter)="changeHandler()" />
         </div>
     </header>
     <div class="container todoapp-wrapper">
@@ -20,10 +16,8 @@
         </pre> -->
         <section class="main">
             <ul class="todo-list">
-                <li 
-                    (dblclick)="updateTaskEditing(i)"
-                    *ngFor="let task of tasksByFilter(); index as i" 
-                    [class.completed]="task.completed" 
+                @for (task of tasksByFilter(); track task; let i = $index) {
+                <li (dblclick)="updateTaskEditing(i)" [class.completed]="task.completed"
                     [class.editing]="task?.editing">
                     <div class="view">
                         <input class="toggle" type="checkbox" [checked]="task.completed" (change)="changeState(task)" />
@@ -32,6 +26,7 @@
                     </div>
                     <input class="edit" (keydown.enter)="updateTaskText(i, $event)" [value]="task.title" />
                 </li>
+                }
                 <!--
                 <li class="completed">
                     <div class="view">
@@ -56,21 +51,23 @@
         <!-- This footer should be hidden by default and shown when there are todos -->
         <footer class="footer">
             <!-- This should be `0 items left` by default -->
-            <span class="todo-count"><strong> {{ tasksByFilter().length }} </strong> {{ tasksByFilter().length <= 1 ? "item" : "items" }} </span>
-            <!-- Remove this if you don't implement routing -->
-            <ul class="filters">
-                <li>
-                    <a (click)="changeFilter('all')" [class.selected]="filter() === 'all'">All</a>
-                </li>
-                <li>
-                    <a (click)="changeFilter('pending')" [class.selected]="filter() === 'pending'">Pending</a>
-                </li>
-                <li>
-                    <a (click)="changeFilter('completed')" [class.selected]="filter() === 'completed'">Completed</a>
-                </li>
-            </ul>
-            <!-- Hidden if no completed items are left ↓ -->
-            <button class="clear-completed">Clear completed</button>
+            <span class="todo-count"><strong> {{ tasksByFilter().length }} </strong> {{ tasksByFilter().length <= 1
+                    ? "item" : "items" }} </span>
+                    <!-- Remove this if you don't implement routing -->
+                    <ul class="filters">
+                        <li>
+                            <a (click)="changeFilter('all')" [class.selected]="filter() === 'all'">All</a>
+                        </li>
+                        <li>
+                            <a (click)="changeFilter('pending')" [class.selected]="filter() === 'pending'">Pending</a>
+                        </li>
+                        <li>
+                            <a (click)="changeFilter('completed')"
+                                [class.selected]="filter() === 'completed'">Completed</a>
+                        </li>
+                    </ul>
+                    <!-- Hidden if no completed items are left ↓ -->
+                    <button class="clear-completed">Clear completed</button>
         </footer>
     </div>
 </section>
